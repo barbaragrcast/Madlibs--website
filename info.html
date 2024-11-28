@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Mad Libs?</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+.wavy2 {
+    position: absolute;
+    top: 100px;
+    left: 40%;
+    transform: translateX(-50%);
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));
+
+}
+
+
+.wavy2 span {
+    position: relative;
+    display: inline-block;
+    font-size: 4em;
+    text-transform: uppercase;
+    animation: animate 4.9s ease-in-out infinite;
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "BLED" 0, "SCAN" 0, "XELA" 0, "YELA" 0;
+    animation-delay: calc(0.1s * var(--i));
+    filter: hue-rotate(320deg) saturate(1.5);
+    
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+    40%, 100% {
+        transform: translateY(0px);
+    }
+}
+.centered-left {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    left: 33%;
+    transform: translateX(-50%);
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 45px;
+    margin-top: 140px;
+    display: block;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+
+}
+
+#options2 button {
+    background-color: #e44b8d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+}
+.flower-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 400px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-text2" class="wavy2">
+            <span style="--i:1;">W</span>
+            <span style="--i:2;">h</span>
+            <span style="--i:3;">a</span>
+            <span style="--i:4;">t</span>
+            <span style="--i:5;"> </span>
+            <span style="--i:6;"> </span>
+            <span style="--i:7;"> </span>
+            <span style="--i:8;">a</span>
+            <span style="--i:9;">r</span>
+            <span style="--i:10;">e</span>
+            <span style="--i:11;"> </span>
+            <span style="--i:12;"> </span>
+            <span style="--i:13;"> </span>
+            <span style="--i:14;">m</span>
+            <span style="--i:15;">a</span>
+            <span style="--i:16;">d</span>
+            <span style="--i:17;">l</span>
+            <span style="--i:18;">i</span> 
+            <span style="--i:19;">b</span>
+            <span style="--i:20;">s</span>
+            <span style="--i:21;">?</span>
+        </div>
+        <div class="centered-left">
+            <p>MadLibs are a word game. You fill in blanks with random words (like nouns, verbs, or adjectives) to create silly stories. If you still don't understand, we can start playing so you get the hang of it.</p>
+            </div>
+        <div id="options2">
+            <button id="go-back-btn" onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+    <img class="flower-right" src="Pinkflower.png" alt="A pink flower"/>
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';  
+        }
+    </script>
+</body>
+</html>
+

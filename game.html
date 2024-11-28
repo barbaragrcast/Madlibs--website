@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Dosis", serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+        }
+        .container {
+            text-align: center;
+        }
+        .input-row {
+            display: flex;
+            justify-content: space-around;
+            margin: 1em 0;
+        }
+        .input-group {
+            margin: 0 10px;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            color: black;
+            font-size: 1em;
+        }
+        .help-btn {
+            background-color: #597d35;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        .help-btn:hover {
+            background-color: #4a6630; 
+        }
+        .story {
+            font-size: 1.2em;
+            white-space: pre-line;
+            margin-top: 20px;
+            margin-left: 0%;
+        }
+        #story-output {
+            position: absolute;
+            font-family: "Dosis", serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+            white-space: pre-wrap;
+            text-align: left; 
+            line-height: 1.5; 
+            color: white; 
+            font-size: 1.1em; 
+            margin-top: 20px; 
+            padding: 10px;
+            background-color: black; 
+            border-radius: 10px; 
+        }
+        .colored-text {
+            color: inherit; 
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #597d35;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4a6630;
+        }
+        .wavy3 {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+            -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));
+        }
+        .wavy3 span {
+            position: relative;
+            display: inline-block;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            animation: animate 4.9s ease-in-out infinite;
+            font-family: "Sixtyfour Convergence", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings: "BLED" 0, "SCAN" 0, "XELA" 0, "YELA" 0;
+            animation-delay: calc(0.1s * var(--i));
+            filter: hue-rotate(100deg) saturate(1.1);
+        }
+        @keyframes animate {
+            0% {
+                transform: translateY(0px);
+            }
+            20% {
+                transform: translateY(-20px);
+            }
+            40%, 100% {
+                transform: translateY(0px);
+            }
+        }
+        .plant-group {
+            position: absolute;
+        }
+        .plant {
+            width: 270px;
+            height: auto;
+        }
+        .plant-group.top-left {
+            top: 10px;
+            left: -60px;
+        }
+        
+        .moon-group {
+            position: absolute;
+        }
+        .moon {
+            width: 200px;
+            height: auto;
+        }
+        .moon-group.top-right {
+            top: 5px;
+            right: -40px;
+        }
+        .tree-group {
+            position: absolute;
+        }
+        .tree {
+            width: 350px;
+            height: auto;
+        }
+        .tree-group.bottom-right {
+            bottom: -200px;
+            right: 10px;
+        }
+        .star-group {
+            position: absolute;
+        }
+        .star {
+            width: 100px;
+            height: auto;
+        }
+        .star-group.bottom-right {
+            bottom: 90px;
+            right: 300px;
+        }
+        .butterfly-group {
+            position: absolute;
+        }
+        .butterfly {
+            width: 190px;
+            height: auto;
+        }
+        .butterfly-group.bottom-left{
+            bottom: -50px;
+            left: 60px;
+        }
+        .chicken-group {
+            position: absolute;
+        }
+        .chicken {
+            width: 120px;
+            height: auto;
+        }
+        .chicken-group.bottom-right{
+            bottom: -200px;
+            right: 330px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-text3" class="wavy3">
+            <span style="--i:1;">L</span>
+            <span style="--i:2;">e</span>
+            <span style="--i:3;">t</span>
+            <span style="--i:4;">s</span>
+            <span style="--i:5;"> </span>
+            <span style="--i:6;">c</span>
+            <span style="--i:7;">r</span>
+            <span style="--i:8;">e</span>
+            <span style="--i:9;">a</span>
+            <span style="--i:10;">t</span>
+            <span style="--i:11;">e</span>
+            <span style="--i:12;"> </span>
+            <span style="--i:13;">o</span> 
+            <span style="--i:14;">u</span>
+            <span style="--i:15;">r</span>
+            <span style="--i:16;"> </span>
+            <span style="--i:17;">f</span>
+            <span style="--i:18;">i</span>
+            <span style="--i:19;">r</span>
+            <span style="--i:20;">s</span>
+            <span style="--i:21;">t</span>
+            <span style="--i:22;"> </span>
+            <span style="--i:23;">s</span>
+            <span style="--i:24;">t</span>
+            <span style="--i:25;">o</span>
+            <span style="--i:26;">r</span>
+            <span style="--i:27;">y</span>
+            <span style="--i:28;">!</span>
+        </div>
+        <form id="madlibs-form">
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter a name" required>
+                </div>
+                <div class="input-group">
+                    <label for="adjective">Adjective:</label>
+                    <input type="text" id="adjective" placeholder="Enter an adjective" required>
+                </div>
+                <div class="input-group">
+                    <label for="color">Color:</label>
+                    <input type="text" id="color" placeholder="Enter a color" required>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="verb">Verb:</label>
+                    <input type="text" id="verb" placeholder="Verb (ending in -ing)" required>
+                </div>
+                <div class="input-group">
+                    <label for="emotion">Emotion:</label>
+                    <input type="text" id="emotion" placeholder="ending with -ness" required>
+                </div>
+                <div class="input-group">
+                    <label for="animal">Animal:</label>
+                    <input type="text" id="animal" placeholder="Enter a small animal" required>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit">Submit Your Words</button>
+                <button id="back-button">Back</button>
+            </div>
+        </form>
+        <div class="story" id="story-output"></div>
+        <div class="plant-group top-left">
+            <img src="plant.png" alt="plant" class="plant"/>
+        </div>
+        <div class="moon-group top-right">
+            <img src="moon.png" alt="moon" class="moon"/>
+        </div>
+        <div class="tree-group bottom-right">
+            <img src="tree.png" alt="tree" class="tree"/>
+        </div>
+        <div class="star-group bottom-right">
+            <img src="star3.png" alt="star" class="star"/>
+        </div>
+        <div class="butterfly-group bottom-left">
+            <img src="butterfly.png" alt="butterfly" class="butterfly"/>
+        </div>
+        <div class="chicken-group bottom-right">
+            <img src="chicken.png" alt="chicken" class="chicken"/>
+        </div>
+        <audio id="story-audio" src="storyaudio.mp3"></audio>
+    </div>
+    <script src="game-script.js"></script>
+</body>
+</html>
